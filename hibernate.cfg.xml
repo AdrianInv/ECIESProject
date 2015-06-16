@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration SYSTEM "classpath://org/hibernate/hibernate-configuration-3.0.dtd" >
+
+<hibernate-configuration>
+
+	<session-factory name="java:hibernate/HIBTestSessionFactoryClient">
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/prueba</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1faha0428</property>
+        <property name="connection.pool_size">1</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	    <property name="current_session_context_class">thread</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">create</property>
+
+		<mapping class="com.webserver.bean.TbCliente" />
+		<mapping class="com.webserver.bean.TbCuenta" />
+		<mapping class="com.webserver.bean.TbHistorialcuenta" />
+		<mapping class="com.webserver.bean.TbLogcliente" />
+		<mapping class="com.webserver.bean.TbOperacion" />
+		<mapping class="com.webserver.bean.TbTipocliente" />
+		<mapping class="com.webserver.bean.TbTipocuenta" />
+		<mapping class="com.webserver.bean.TbTipotransaccion" />
+		<mapping class="com.webserver.bean.TbTransaccion" />
+	
+	</session-factory>
+
+</hibernate-configuration>
